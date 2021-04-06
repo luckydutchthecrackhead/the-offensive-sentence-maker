@@ -5,3 +5,14 @@ woorden = ["used panties" , "A fart so powerfull that it wakes the giants from t
 while True:
     print(zinnen[randint(0, len(zinnen))]+" "+woorden[randint(0, len(woorden))])
     input()
+
+
+arraySaved = []; temp = [0] #Initialize temporary list
+for idx, i in enumerate(indents):
+    if idx==len(indents)-1:
+        temp.append(idx)
+        arraySaved.append(temp) #Reached end of list
+    elif indents[idx+1]<i: #Ending index of temporary list
+        temp.append(idx)
+        arraySaved.append(temp) #Store temporary list
+        temp = []; temp.append(idx+1) #Reset temporary list and begin new one
